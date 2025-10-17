@@ -3,7 +3,7 @@
 <suite name="QA Automation Practice API Test Suites">
   <test thread-count="5" name="Test">
     <classes>
-      <class name=""/>
+      <class name="APITests.APITestScenarios"/>
 
 </classes>
 </test> <!-- Test       <class name="APITests.APITestCase"/>  -->

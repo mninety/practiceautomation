@@ -3,5 +3,7 @@
 <suite name="QA Automation Practice Test Suites" parallel="tests" thread-count="3">
   <suite-files>
     <suite-file path="testngAndroid.xml"/>
+    <suite-file path="testngWeb.xml"/>
+    <suite-file path="testngAPI.xml"/>
   </suite-files>
 </suite>

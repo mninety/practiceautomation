@@ -2,6 +2,7 @@ package APITests;
 
 import APIs.listGET;
 import Init.BaseRunner;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class APITestScenarios extends BaseRunner {
         listGET listapi = new listGET();
         listapi.listAPI();
         System.out.println("API Call: "+listapi.getId(2));
-
+        Assert.assertEquals(listapi.getId(2),"3","Test Failed!!!");
     }
 
 }

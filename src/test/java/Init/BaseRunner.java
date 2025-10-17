@@ -419,7 +419,7 @@ public class BaseRunner {
 
         }
         parentWindow=wdriver.getWindowHandle();
-        System.out.println("Parent Window: "+parentWindow);
+        //System.out.println("Parent Window: "+parentWindow);
 
     }
 
@@ -438,9 +438,10 @@ public class BaseRunner {
         }
         if(webAutomation.equals("1"))
         {
-            setUpWebDriver();
-            wdriver.get(webURL);
-            Thread.sleep(Long.valueOf(midSleep));
+            System.out.println("WebDriver: "+wdriver);
+            if(wdriver==null) {
+                setUpWebDriver();
+            }
 
         }
 
