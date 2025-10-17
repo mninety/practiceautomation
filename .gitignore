@@ -1,0 +1,10 @@
+allure-results/
+allure-report/
+logs/*
+logs/
+.idea
+.idea/*
+target/
+.idea/misc.xml
+.idea/modules.xml
+.DS_Store
