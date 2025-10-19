@@ -386,16 +386,13 @@ public class BaseRunner {
             //capabilities.setCapability("chrome.arguments", "-screenwidth 2048 -screenheight 1024");
             wdriver.manage().window().maximize();
             //wdriver.manage().window().setSize(new Dimension(300, 600));
-        } else if (browserName.equalsIgnoreCase("firefox")) {
+        }
+        else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             wdriver = new FirefoxDriver();
             wdriver.manage().window().maximize();
-        } else if (browserName.equalsIgnoreCase("ie")) {
-            WebDriverManager.iedriver().setup();
-            wdriver = new InternetExplorerDriver();
-            wdriver.manage().window().maximize();
         } else if (browserName.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
+            WebDriverManager.edgedriver().avoidBrowserDetection().setup();
             wdriver = new EdgeDriver();
             wdriver.manage().window().maximize();
         } else if (browserName.equalsIgnoreCase("safari")) {
@@ -425,7 +422,7 @@ public class BaseRunner {
 
 
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void beforeSuit() throws Exception {
 
         //secureVariableInitialization();
@@ -450,7 +447,7 @@ public class BaseRunner {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void takingScreenshot(ITestResult result) throws IOException {
         if(ssforFailedTC.equals("1")) {
 
@@ -496,7 +493,7 @@ public class BaseRunner {
 
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void afterSuit() throws Exception {
 
         if(androidAutomation.equals("1") || iosAutomation.equals("1")) {

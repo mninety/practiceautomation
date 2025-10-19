@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class RetryAnalyzer implements IRetryAnalyzer {
- FileProcessing processing = new FileProcessing();
- int counter = 0;
 
+    FileProcessing processing = new FileProcessing();
+    int counter = 0;
 
     public RetryAnalyzer() throws IOException {
     }
@@ -32,11 +32,14 @@ public class RetryAnalyzer implements IRetryAnalyzer {
  @Override
  public boolean retry(ITestResult result) {
  
- if(counter < retryLimit)
- {
- counter++;
- return true;
+     if(counter < retryLimit)
+     {
+         System.out.println("Retry invoked for: " + result.getName() + " | Retry old count: " + counter);
+         counter++;
+         System.out.println("Retry count++: " + counter);
+         return true;
+     }
+     return false;
  }
- return false;
- }
+
 }

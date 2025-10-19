@@ -1,5 +1,6 @@
 allure-results/
 allure-report/
+resultCSV/
 logs/*
 logs/
 .idea
