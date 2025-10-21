@@ -1,14 +1,17 @@
 package AppTests;
 
 import Init.BaseRunner;
+import Init.CommonMethods;
 import Utils.RetryAnalyzer;
 import com.google.common.base.Verify;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(Utils.TestMethodListener.class)
 public class AppTestScenarios extends BaseRunner {
+    CommonMethods commonMethods = new CommonMethods();
 
     public AppTestScenarios() throws Exception {
     }
@@ -22,8 +25,7 @@ public class AppTestScenarios extends BaseRunner {
     }
 
     @Test(description = "FirstTestforiOS", enabled = true, retryAnalyzer = RetryAnalyzer.class)
-    public void FirstTestforiOS()
-    {
+    public void FirstTestforiOS() throws InterruptedException {
         System.out.println("iOS Driver: "+idriver);
         Assert.assertNotEquals(idriver,null,"Test Failed!!!");
 
